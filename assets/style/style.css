@@ -2,3 +2,30 @@ body {
     background-position: center;
     background-size: cover;
 }
+
+.quoteBody {
+    visibility: hidden;
+    opacity: 0;
+    transition: ease 1s;
+
+    backdrop-filter: blur (20px);
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: rgba(20, 17, 26, 0.6);
+}
+
+.quoteHeader {
+    cursor: pointer;
+    backdrop-filter: blur (20px);
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: rgba(20, 17, 26, 0.6);
+
+}
+
+.quoteHeader:hover+.quoteBody {
+    visibility: visible;
+    opacity: 1;
+}

@@ -31,18 +31,26 @@
 
 
 
-    <section id="router-view">
+    <section id="router-view" class="container-fluid">
 
     </section>
 
 
   </main>
+  <footer class=" container-fluid">
+    <div class="row">
+      <div class="col-6 p-2" id="weather"></div>
+      <div class=" col-6 text-end p-2">
+        <div class="p-2 bg-light flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+      </div>
+    </div>
+  </footer>
 
-  <!-- SECTION -->
 
-
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js">
+  </script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.22/auth0-spa-js.production.js"></script>
+
   <script src="https://cdn.jsdelivr.net/gh/jakeoverall/auth0provider-client/browser/Auth0Provider.js"></script>
   <script src="https://cdn.socket.io/4.1.1/socket.io.min.js"
     integrity="sha384-cdrFIqe3RasCMNE0jeFG9xJHog/tgOVC1E9Lzve8LQN1g5WUHo0Kvk1mawWjxX7a"
@@ -56,12 +64,7 @@
   <script src="app/App.js" type="module"></script>
 </body>
 
-<footer class="container-fluid">
-  <div class="row text-end">
-    <div class=" col-12 text-end p-2">
-      <div class="p-2 bg-light flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-    </div>
-  </div>
-</footer>
+
+
 
 </html>
