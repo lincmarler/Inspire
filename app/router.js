@@ -1,7 +1,9 @@
 import { AboutController } from "./controllers/AboutController.js";
 import { HomeController } from "./controllers/HomeController.js";
+import { BackgroundImageController } from "./controllers/BackgroundImageController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
+import { QuotesController } from "./controllers/QuotesController.js";
 
 /**
  * Register your routes for the application here
@@ -10,14 +12,9 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: HomeController,
+    controller: [BackgroundImageController, QuotesController],
     view: /*html*/`
-    <div class="card">
-      <div class="card-body">
-        <p>Home Page</p>
-        <button class="btn btn-dark" onclick="app.HomeController.testButton()">😎</button>
-      </div>
-    </div>
+ 
     `
   },
   {

@@ -4,6 +4,13 @@ import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
 
 class ObservableAppState extends EventEmitter {
+
+  /** @type {import('./models/BackgroundImage.js').BackgroundImage | null} */
+  BackgroundActive = null
+
+  /** @type {import('./models/Quote.js').Quote | null}*/
+  quote = null
+
   page = ''
   user = null
   /** @type {import('./models/Account.js').Account | null} */
