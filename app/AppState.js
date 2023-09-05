@@ -1,3 +1,4 @@
+import { ToDo } from './models/ToDo.js'
 import { Value } from './models/Value.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
@@ -7,6 +8,9 @@ class ObservableAppState extends EventEmitter {
 
   /** @type {import('./models/BackgroundImage.js').BackgroundImage | null} */
   BackgroundActive = null
+
+  /** @type {import('./models/ToDo.js').ToDo[]} */
+  toDo = []
 
   /** @type {import('./models/Quote.js').Quote | null}*/
   quote = null

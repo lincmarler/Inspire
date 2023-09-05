@@ -35,12 +35,27 @@
 
     </section>
 
+    <section class="container-fluid text-end">
+      <div class="row">
+        <div class="col-12">
+          <form onsubmit="app.ToDoController.createToDo">
+            <input type="text" placeholder="Add ToDo"> <button btn btn-secondary type="submit"><i
+                class="mdi mdi-plus-thick"></i></button>
+          </form>
+          <div id="toDo" class="fs-4">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
 
   </main>
   <footer class=" container-fluid">
     <div class="row">
-      <div class="col-6 p-2" id="weather"></div>
-      <div class=" col-6 text-end p-2">
+      <div class="col-4 p-2" id="weather"></div>
+      <div class="col-4 p-2" id="time"></div>
+      <div class=" col-4 text-end p-2">
         <div class="p-2 bg-light flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import { ValuesController } from "./controllers/ValuesController.js";
 import { AboutView } from "./views/AboutView.js";
 import { QuotesController } from "./controllers/QuotesController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
+import { ToDoController } from "./controllers/ToDoController.js";
 
 /**
  * Register your routes for the application here
@@ -13,9 +14,10 @@ import { WeatherController } from "./controllers/WeatherController.js";
 export const router = [
   {
     path: '',
-    controller: [BackgroundImageController, QuotesController, WeatherController],
+    controller: [BackgroundImageController, QuotesController, WeatherController, ToDoController],
     view: /*html*/`
- <div id="quote"></div>
+ <div  id="quote"></div>
+ 
     `
   },
   {
