@@ -5,7 +5,7 @@ import { api } from "./AxiosService.js";
 class ToDoService {
     async getToDo() {
         console.log('getting todo')
-        const res = await api.get(`/api/todos`)
+        const res = await api.get(`api/todos`)
         console.log(res.data)
         let toDoList = res.data.map(data => new ToDo(data))
         AppState.toDo = toDoList

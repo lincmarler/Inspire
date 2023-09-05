@@ -17,7 +17,7 @@ function _drawToDo() {
 
 export class ToDoController {
     constructor() {
-        this.getToDo()
+        AppState.on('user', this.getToDo)
         AppState.on('toDo', _drawToDo)
 
     }
