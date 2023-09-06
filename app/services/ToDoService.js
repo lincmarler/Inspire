@@ -6,6 +6,7 @@ import { setHTML } from "../utils/Writer.js";
 
 
 class ToDoService {
+
     async getToDo() {
         console.log('getting todo')
         const res = await api.get(`api/todos`)
@@ -20,8 +21,15 @@ class ToDoService {
         this.getToDo()
     }
 
+    async setComplete(todoId) {
+        const res = await api.get(`api/todos/${todoId}`)
+        res.complete = true
+        res.complete != res.complete
+
+    }
     async createTodo(formData) {
         const res = await api.post('api/todos', formData)
+        res.complete = false
         const newTodo = new ToDo(res.data)
         AppState.toDo.push(newTodo)
         this.getToDo()

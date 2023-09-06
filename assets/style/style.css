@@ -29,3 +29,11 @@ body {
     visibility: visible;
     opacity: 1;
 }
+
+.timeBody {
+    backdrop-filter: blur (20px);
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: .5em;
+    background-color: rgba(20, 17, 26, 0.6);
+}

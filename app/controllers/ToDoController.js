@@ -5,14 +5,23 @@ import { ToDo } from "../models/ToDo.js"
 import { api } from "../services/AxiosService.js"
 import { Pop } from "../utils/Pop.js"
 import { getFormData } from "../utils/FormHandler.js"
+import { Time } from "../models/Time.js"
 
 
-function _drawToDo() {
-    console.log('drawing todo')
-    let toDoList = AppState.toDo
-    let content = ''
-    toDoList.forEach(list => content += list.ListTemplate)
-    setHTML('todo', content)
+function _drawToDo(todoId) {
+    // console.log('drawing todo')
+    if (todoId.complete = true) {
+        let toDoList = AppState.toDo
+        let content = ''
+        toDoList.filter(todo => content += todo.ListTemplate)
+        setHTML('todo', content)
+    } else {
+        let toDoList = AppState.toDo
+        let content = ''
+        toDoList.filter(todo => content += todo.ListTemplateComplete)
+        setHTML('todo', content)
+    }
+
 }
 
 function _drawTotal() {
@@ -26,6 +35,7 @@ export class ToDoController {
         AppState.on('user', this.getToDo)
         AppState.on('toDo', _drawToDo)
         AppState.on('toDo', _drawTotal)
+        // AppState.on('toDo', )
     }
 
     async getToDo() {
@@ -55,6 +65,14 @@ export class ToDoController {
             if (await Pop.confirm("Are you sure you want to delete?")) {
                 await toDoService.deleteList(todoId)
             }
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    async setComplete(todoId) {
+        try {
+            await toDoService.setComplete(todoId)
         } catch (error) {
             console.error(error)
         }

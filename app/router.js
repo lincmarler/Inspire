@@ -7,6 +7,7 @@ import { QuotesController } from "./controllers/QuotesController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
 import { ToDoController } from "./controllers/ToDoController.js";
 
+
 /**
  * Register your routes for the application here
  * @type {Route[]}
