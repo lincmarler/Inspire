@@ -1,13 +1,10 @@
-export class Time {
-    time = Date()
+import { setHTML } from "../utils/Writer.js"
 
-    get TimeTemplate() {
-        return ` <h1 class="text-center timeBody text-secondary">⏰${this.time.toLocaleString()}</h1>`
-    }
-}
 
-function drawTime() {
+export function drawTime() {
+
+    let time = new Date().toLocaleDateString([], { hour: '2-digit', minute: '2-digit' })
     let content = ''
-    content += time.TimeTemplate
+    content += time
     setHTML('time', content)
 }

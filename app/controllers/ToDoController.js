@@ -5,7 +5,7 @@ import { ToDo } from "../models/ToDo.js"
 import { api } from "../services/AxiosService.js"
 import { Pop } from "../utils/Pop.js"
 import { getFormData } from "../utils/FormHandler.js"
-import { Time } from "../models/Time.js"
+import { drawTime } from "../models/Time.js"
 
 
 function _drawToDo(todoId) {
@@ -35,7 +35,8 @@ export class ToDoController {
         AppState.on('user', this.getToDo)
         AppState.on('toDo', _drawToDo)
         AppState.on('toDo', _drawTotal)
-        // AppState.on('toDo', )
+        AppState.on('toDo', drawTime)
+        setInterval(drawTime, 60000)
     }
 
     async getToDo() {

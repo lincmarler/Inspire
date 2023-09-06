@@ -15,8 +15,6 @@ class ObservableAppState extends EventEmitter {
   /** @type {import('./models/Quote.js').Quote | null}*/
   quote = null
 
-  /** @type {import('./models/Time.js').Time | null} */
-  // time = null
 
   /** @type {import('./models/Weather.js').Weather | null} */
   weather = null
