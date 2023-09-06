@@ -17,7 +17,20 @@ export const router = [
     controller: [BackgroundImageController, QuotesController, WeatherController, ToDoController],
     view: /*html*/`
  <div  id="quote"></div>
- 
+ <section class="container-fluid text-end">
+      <div class="row">
+        <div class="col-12">
+        <div ><span id="totaltoDo" class="fs-3 bg-light"></span></div>
+          <form onsubmit="app.ToDoController.createTodo()">
+            <input type="text" name="description" id="description" placeholder="Add ToDo"> <button btn btn-secondary type="submit"><i
+                class="mdi mdi-plus-thick"></i></button>
+          </form>
+          <div id="todo" class="fs-4">
+
+          </div>
+        </div>
+      </div>
+    </section>
     `
   },
   {

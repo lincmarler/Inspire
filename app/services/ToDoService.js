@@ -1,6 +1,9 @@
 import { AppState } from "../AppState.js";
 import { ToDo } from "../models/ToDo.js";
 import { api } from "./AxiosService.js";
+import { setHTML } from "../utils/Writer.js";
+
+
 
 class ToDoService {
     async getToDo() {
@@ -11,15 +14,20 @@ class ToDoService {
         AppState.toDo = toDoList
     }
 
-    async deleteList(listId) {
-        const res = await api.delete(`/api/todos/${listId}`)
-        AppState.toDo = AppState.toDo.filter(todo => todo.id != listId)
+    async deleteList(todoId) {
+        const res = await api.delete(`api/todos/${todoId}`)
+        AppState.toDo = AppState.toDo.filter(todo => todo.id != todoId)
+        this.getToDo()
     }
 
     async createTodo(formData) {
-        let res = await api.post('/api/todos', formData)
+        const res = await api.post('api/todos', formData)
+        const newTodo = new ToDo(res.data)
+        AppState.toDo.push(newTodo)
         this.getToDo()
     }
+
+
 }
 
 export const toDoService = new ToDoService()

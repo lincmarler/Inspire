@@ -15,11 +15,17 @@ function _drawToDo() {
     setHTML('todo', content)
 }
 
+function _drawTotal() {
+    let totaltoDo = AppState.toDo.length
+    setHTML('totaltoDo', totaltoDo)
+    // console.log(totalNotes, "totalling")
+}
+
 export class ToDoController {
     constructor() {
         AppState.on('user', this.getToDo)
         AppState.on('toDo', _drawToDo)
-
+        AppState.on('toDo', _drawTotal)
     }
 
     async getToDo() {
@@ -33,19 +39,21 @@ export class ToDoController {
     async createTodo() {
         try {
             window.event.preventDefault()
-            let form = window.event.target
-            let fromData = getFormData(form)
+            const form = window.event.target
+            const formData = getFormData(form)
             await toDoService.createTodo(formData)
+            // @ts-ignore
+            form.reset()
         } catch (error) {
             console.error(error)
         }
     }
 
-    async deleteList(listId) {
+    async deleteList(todoId) {
         try {
             console.log('deleting')
             if (await Pop.confirm("Are you sure you want to delete?")) {
-                await toDoService.deleteList(listId)
+                await toDoService.deleteList(todoId)
             }
         } catch (error) {
             console.error(error)
