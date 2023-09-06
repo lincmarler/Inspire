@@ -22,10 +22,10 @@ class ToDoService {
     }
 
     async setComplete(todoId) {
-        const res = await api.get(`api/todos/${todoId}`)
+        const res = await api.put(`api/todos/${todoId}`)
         res.complete = true
         res.complete != res.complete
-
+        console.log(res)
     }
     async createTodo(formData) {
         const res = await api.post('api/todos', formData)

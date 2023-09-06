@@ -9,7 +9,7 @@ export class ToDo {
 
     get ListTemplateComplete() {
         return `<div>
-              <span class="bg-dark text-light"><input type="checkbox" onclick=""> ${this.description} <i onclick="app.ToDoController.deleteList('${this.id}')" class="mdi mdi-delete"></i>
+              <span class="bg-dark text-light"><input type="checkbox" onclick="app.ToDoController.setComplete(todoId)"> ${this.description} <i onclick="app.ToDoController.deleteList('${this.id}')" class="mdi mdi-delete"></i>
               </span>
             </div>`
     }
